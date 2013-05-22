@@ -36,4 +36,5 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+bundler_stubs/
 >>>>>>> 359c6d560c1580c41ad53077ce7ed604f8f725fa
