@@ -5,6 +5,10 @@ describe "Home page" do
 		visit '/static_pages/home'
 		page.should have_content('Sample App')
 	end
+	it "should not have the custom title'| Home'" do
+		visit '/static_pages/home'
+		page.should_not have_selector('title', :text => '| Home')
+	end
 end
 
 describe "Help page" do
