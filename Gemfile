@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 gem 'sass-rails','3.2.4'
 gem 'bootstrap-sass', '~> 2.3.1.0'
-gem 'thin'
-
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
