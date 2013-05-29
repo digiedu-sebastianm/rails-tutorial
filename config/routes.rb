@@ -1,5 +1,4 @@
 RailsTutorial::Application.routes.draw do
-  
   resources :microposts
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
@@ -13,8 +12,15 @@ RailsTutorial::Application.routes.draw do
   match '/about_us', to: 'static_pages#about_us'
   match '/signup', to: 'users#new'
 
+  get '/users', to: 'users#index'
   get '/users/:id', to: 'users#show'
-  get '/users', to: 'users#new'
+  get '/users/new', to: 'users#new'
+
+  post '/users', to: 'users#new'
+  get '/users/:id/edit', to: 'users#create'
+
+  put '/users/:id', to: 'users#update'
+  delete 'users/:id', to: 'users#destroy'
 
   match '/signup', to: 'users#new'
   
