@@ -1,0 +1,7 @@
+=link_to image_tag(gravatar_for current_user), user_path(current_user), :alt => current_user.name
+%h1
+	= current_user.name
+%span
+	= link_to "View my profile", current_user
+%span
+	= pluralize(current_user.microposts.count, "microposts")

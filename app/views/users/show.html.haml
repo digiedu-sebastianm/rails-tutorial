@@ -2,6 +2,12 @@
 .row
 	%aside.span4
 		%section
+			= gravatar_for @user
 			%h1
-				= gravatar_for @user
 				= @user.name
+	.span8
+		- if @total_micros > 0
+			%h3="Microposts #{@total_micros}"
+			%ol.microposts
+				=render :partial => "microposts/micropost", :locals => {:micros => @microposts}
+			= will_paginate @microposts

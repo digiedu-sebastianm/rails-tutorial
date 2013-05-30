@@ -2,6 +2,7 @@ RailsTutorial::Application.routes.draw do
   resources :microposts
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:create, :destroy]
 
   get "users/new"
 
@@ -27,4 +28,8 @@ RailsTutorial::Application.routes.draw do
   match '/signin', to: 'sessions#new'
   match '/sessions', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+
+  post '/microposts', to: 'microposts#create'
+  delete '/microposts/:id', to: 'microposts#destroy'
+
 end

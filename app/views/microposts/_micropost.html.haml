@@ -1,0 +1,7 @@
+-micros.each do |mic|
+	%li
+		%span.content=mic.content
+		%span.timestamp
+			= "Posted #{time_ago_in_words(mic.created_at)} ago"
+		- if correct_user?(micropost.user)
+			= link_to "Delete", micropost, method: :delete, confirm: "You sure?", title: micropost.content
